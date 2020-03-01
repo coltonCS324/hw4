@@ -1,0 +1,44 @@
+Part 1 (20 points):
+
+
+1. Of the following, which of the arrays have the same total bytes allocated AND have the same contents as s1 (indicate all that apply)?
+ANSWER:
+s2, a1, a2, a3,  a4
+
+2. Which of the following pairs of pointer values are the same (indicate all that apply)?
+
+s1 and e1 ONLY
+
+What expression do you use to compare these pointer values?  Will this same expression always work for comparing the string values (i.e., array content) of two strings?
+
+"I use s1 == e1". This expression will only work for strings with the same pointer (but won't work for deep equality).
+
+3. Which of the following arrays can be considered "strings" for the purposes of using them as arguments to strcpy(), strncpy(), strcmp(), strncmp(), and similar string functions (indicate all the apply)?
+
+
+s1, s2, a1, a2, a3, a4,c1, c2, d1, d2, e1
+
+What makes an array a "string" for use with these string functions?
+They all have the null character '\0' to signify that they're a string.
+
+
+4. Which of the following arrays can be used as arguments to memcpy() and memcmp()?
+
+
+s1, s2,
+a1, a2, a3, a4,
+b1, b2, b3, b4,
+c1, c2,
+d1, d2
+
+e1 cannot be used because it overlaps with s1
+
+5. Which of the following pairs will always result in strcmp() returning a 0 value (i.e., that the strings are equivalent)?
+
+
+s1, e1
+
+For those pairs for which strcmp() returns a non-zero value (i.e., strings are not equivalent), explain why, in just a few words.
+s1, b1 - s1 has '\0' at the end of the string, the other does not
+c1, c2 - They are different strings with different characters
+s1, d1 - They are different strings with different characters

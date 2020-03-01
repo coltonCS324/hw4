@@ -1,0 +1,50 @@
+Part 2 (24 points):
+
+Download and extract the following file:
+
+a. Download strings.tar.gz and un-tar/gzip it to a directory:
+
+strings.tar.gz  Download
+
+$ tar -zxvf strings.tar.gz
+
+(Note: LearningSuite does something weird to my tar.gz files, so you might need to do this:
+
+$ gunzip strings.tar.gz; tar -xvf strings.tar
+)
+
+b. Run "make" to compile the program. (Because there are bugs in the program, several warnings will pop up.)
+
+This program allows you to test the 6 functions by running ./strings <num>, where num is a number 1-6 that corresponds to the function you want to test. Once you are able to successfully compile and run the program, open strings.c and look at the 6 functions.
+
+For each of the 6 provided functions (isHelloWorld, fillHelloWorld, copyString, copyArray, getSubstring, getFirstWord):
+
+Carefully read the function description and provided implementation.
+Run ./strings <num> with the function number to see the function's current and expected output.
+Explain why the provided implementation does not work. (Put your explanations into a file called hw4-part2.txt.)
+Explain what needs to be changed about the implementation to make the function work correctly.
+Fix the provided implementation so that the function works as described. Verify your solution by running ./strings <num> with the function number.
+You are not allowed to change any other part of the program except for one line in main() that is labeled in Test 4 of strings.c.
+
+To turn in:
+
+Please submit the following:
+
+The answers to part 1 in a file called hw4-part1.txt.
+The hw4-part2.txt file containing your explanations for why each of the six functions in part 2 did not work as provided and what you did to fix the issue.
+strings.c (from part 2) with your corrected implementations for each of the six functions.
+Use the following command to tar/gzip your files:
+
+tar -zcvf hw4.tar.gz hw4-part1.txt hw4-part2.txt strings.c
+
+Submit hw4.tar.gz to LearningSuite.
+
+
+1.) isHelloWorld
+This doesn't work because it needs to be a use strmp..right now it is comparing memory addresses.
+2.) fillHelloWorld
+This doesn't work because you are given a pointer to an array, and you are trying to modify the actual array. Therefore, you need to modify what the pointer is pointing at using strcpy.
+3.) copyString
+4.) copyArray
+5.) getSubstring
+6.) getFirstWord
